@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Australia Travel Guide — Vicky & Fabian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --ocean: #0F3A52;
+  --gold: #C9A96E;
+  --cream: #F5EDE3;
+  --green: #3B5F37;
+  --coral: #D4654A;
+  --white: #FAFAF8;
+  --dark: #1A1A1A;
+  --gold-light: #E8D5A8;
+  --ocean-light: #1A4F6E;
+  --shadow: 0 4px 24px rgba(15,58,82,0.08);
+  --shadow-lg: 0 12px 48px rgba(15,58,82,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--ocean); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--coral); }
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.2; }
+h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--ocean); margin-bottom: 1rem; }
+h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--ocean); margin-bottom: 0.75rem; }
+h4 { font-size: 1.2rem; color: var(--green); margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+.subtitle { font-family: 'Outfit', sans-serif; font-weight: 200; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; }
+
+/* ===== LAYOUT ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 5rem 0; }
+.section-alt { background: var(--cream); }
+.section-dark { background: var(--ocean); color: white; }
+.section-dark h2, .section-dark h3 { color: white; }
+.section-dark a { color: var(--gold); }
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(250,250,248,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(15,58,82,0.08);
+  padding: 0.75rem 1.5rem; transition: var(--transition);
+}
+.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: 0.6rem; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ocean); font-weight: 500; }
+.nav-logo { width: 32px; height: 32px; color: var(--ocean); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.04em; }
+.nav-links a { color: var(--dark); opacity: 0.7; }
+.nav-links a:hover { opacity: 1; color: var(--coral); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ocean); margin: 5px 0; transition: var(--transition); }
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(250,250,248,0.98); padding: 1rem 1.5rem; gap: 0.75rem; border-bottom: 1px solid rgba(15,58,82,0.08); }
+  .nav-links.active { display: flex; }
+  .nav-toggle { display: block; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, #0a2a3c 0%, #0F3A52 30%, #1A4F6E 60%, #0F3A52 80%, #071e2b 100%);
+  text-align: center; padding: 2rem; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(201,169,110,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(201,169,110,0.05) 0%, transparent 50%);
+}
+.hero-monogram { width: 160px; height: auto; margin-bottom: 2rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1.2s ease-out 0.3s forwards; }
+.hero h1 { color: white; font-weight: 300; letter-spacing: 0.08em; margin-bottom: 1rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1.2s ease-out 0.6s forwards; }
+.hero .subtitle { color: var(--gold); margin-bottom: 0.5rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1.2s ease-out 0.9s forwards; }
+.hero-tagline { color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 540px; line-height: 1.8; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1.2s ease-out 1.1s forwards; }
+.hero-date { color: var(--gold); font-family: 'Outfit', sans-serif; font-weight: 200; letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.8rem; margin-top: 2rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 1.2s ease-out 1.3s forwards; }
+.hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; animation: pulse 2s ease-in-out infinite; z-index: 1; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+
+/* ===== PHOTO GRID ===== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 2.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.photo-grid img {
+  width: 100%; height: 240px; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.photo-grid img:hover { transform: scale(1.05); }
+.photo-grid .wide { grid-column: span 2; }
+.photo-grid .tall { grid-row: span 2; height: 486px; }
+@media (max-width: 768px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid img { height: 180px; }
+  .photo-grid .tall { height: 366px; }
+}
+@media (max-width: 480px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
+  .photo-grid img { height: 150px; }
+  .photo-grid .tall { height: 304px; }
+}
+
+/* ===== WELCOME ===== */
+.welcome-text { max-width: 700px; margin: 0 auto 2rem; text-align: center; font-size: 1.05rem; color: #555; }
+.welcome-sign { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ocean); font-size: 1.3rem; margin-top: 2rem; }
+
+/* ===== WEDDING BOX ===== */
+.wedding-box {
+  background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-light) 100%);
+  border-radius: var(--radius);
+  padding: 3rem;
+  text-align: center;
+  color: white;
+  max-width: 650px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.wedding-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,169,110,0.1) 0%, transparent 60%);
+}
+.wedding-box h3 { color: var(--gold); font-size: 1.6rem; margin-bottom: 1rem; position: relative; }
+.wedding-box p { position: relative; opacity: 0.9; }
+.wedding-box .wedding-detail { font-weight: 400; font-size: 1.05rem; margin-bottom: 0.4rem; position: relative; }
+.wedding-box .wedding-date { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); margin: 1rem 0; position: relative; }
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+.toc a {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(15,58,82,0.06);
+  font-size: 0.9rem;
+  color: var(--dark);
+  transition: var(--transition);
+}
+.toc a:hover {
+  background: var(--ocean);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.toc-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--cream);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ocean);
+  flex-shrink: 0;
+}
+.toc a:hover .toc-num { background: rgba(255,255,255,0.2); color: white; }
+
+/* ===== STATE SECTIONS ===== */
+.state-banner {
+  height: 320px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.state-banner img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.state-banner .banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,58,82,0.7) 0%, transparent 60%);
+  display: flex; align-items: flex-end; padding: 2rem;
+}
+.state-banner h2 { color: white; margin: 0; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+
+/* ===== CARDS ===== */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-img { height: 200px; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card:hover .card-img img { transform: scale(1.08); }
+.card-body { padding: 1.25rem; }
+.card-body h4 { color: var(--ocean); }
+
+/* ===== EXPERIENCE ITEMS ===== */
+.exp-item { padding: 1.5rem 0; border-bottom: 1px solid rgba(15,58,82,0.08); }
+.exp-item:last-child { border-bottom: none; }
+.exp-item h4 { display: flex; align-items: center; gap: 0.6rem; }
+.exp-num { color: var(--coral); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
+
+/* ===== ITINERARY ===== */
+.itin-day { background: white; border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow); border-left: 4px solid var(--gold); }
+.itin-day h4 { color: var(--ocean); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; }
+.itin-label { color: var(--coral); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+
+/* ===== FOOD SECTIONS ===== */
+.food-section { margin-bottom: 1.5rem; }
+.food-toggle {
+  width: 100%; text-align: left;
+  background: white; border: 1px solid rgba(15,58,82,0.08);
+  border-radius: var(--radius-sm); padding: 1rem 1.25rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+  color: var(--ocean); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: var(--transition);
+}
+.food-toggle:hover { background: var(--cream); }
+.food-toggle::after { content: '+'; font-size: 1.5rem; font-weight: 300; transition: var(--transition); }
+.food-toggle.active::after { content: '−'; }
+.food-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.25rem;
+}
+.food-content.active { max-height: 2000px; padding: 1rem 1.25rem; }
+.food-item { padding: 0.75rem 0; border-bottom: 1px solid rgba(15,58,82,0.05); }
+.food-item:last-child { border-bottom: none; }
+.food-name { font-weight: 500; color: var(--ocean); }
+.food-tip { color: var(--coral); font-style: italic; font-size: 0.9rem; }
+
+/* ===== BEST OF BOXES ===== */
+.best-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.best-box {
+  background: white; border-radius: var(--radius); padding: 1.5rem;
+  border-top: 3px solid var(--gold); box-shadow: var(--shadow);
+}
+.best-box h4 { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+
+/* ===== FUN FACTS ===== */
+.facts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.fact-card {
+  background: white; border-radius: var(--radius-sm); padding: 1.25rem;
+  box-shadow: var(--shadow); text-align: center;
+  border-bottom: 3px solid var(--coral);
+}
+.fact-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+.fact-title { font-weight: 500; color: var(--ocean); font-size: 0.95rem; margin-bottom: 0.3rem; }
+.fact-text { font-size: 0.85rem; color: #666; }
+
+/* ===== ESSENTIALS ===== */
+.essentials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.essential-card { background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+.essential-card h4 { font-family: 'Cormorant Garamond', serif; color: var(--ocean); font-size: 1.2rem; }
+.essential-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+/* ===== SLANG TABLE ===== */
+.slang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 2rem 0; border: 1px solid rgba(15,58,82,0.1); border-radius: var(--radius); overflow: hidden; }
+.slang-header { background: var(--ocean); color: white; padding: 0.85rem 1rem; font-weight: 500; font-size: 0.9rem; }
+.slang-cell { padding: 0.65rem 1rem; font-size: 0.88rem; border-bottom: 1px solid rgba(15,58,82,0.06); background: white; }
+.slang-cell:nth-child(6n+4), .slang-cell:nth-child(6n+5), .slang-cell:nth-child(6n+6) { background: var(--cream); }
+@media (max-width: 600px) { .slang-grid { font-size: 0.8rem; } .slang-cell, .slang-header { padding: 0.5rem 0.6rem; } }
+
+/* ===== GALLERY ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin: 2rem 0; }
+.gallery-item {
+  position: relative; border-radius: var(--radius-sm); overflow: hidden;
+  height: 200px; cursor: pointer;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-caption {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,58,82,0.8) 0%, transparent 50%);
+  display: flex; align-items: flex-end; padding: 1rem;
+  color: white; font-size: 0.85rem; font-weight: 400;
+  opacity: 0; transition: var(--transition);
+}
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+/* ===== STOPOVERS ===== */
+.stopover-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.stopover-card { text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+.stopover-card h4 { color: var(--ocean); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--ocean); color: rgba(255,255,255,0.7);
+  text-align: center; padding: 3rem 1.5rem;
+}
+.footer-logo { width: 50px; height: auto; margin: 0 auto 1rem; }
+.footer h3 { color: white; font-size: 1.4rem; margin-bottom: 0.3rem; }
+.footer .footer-date { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+.footer .footer-love { font-style: italic; font-size: 0.9rem; }
+
+/* ===== IMAGE PLACEHOLDER ===== */
+.img-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--cream) 0%, #e8ddd0 100%);
+  color: var(--ocean); font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-style: italic; opacity: 0.8;
+  min-height: 200px; width: 100%;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 44px; height: 44px;
+  background: var(--ocean); color: white; border: none; border-radius: 50%;
+  font-size: 1.2rem; cursor: pointer;
+  opacity: 0; transform: translateY(10px);
+  transition: var(--transition);
+  display: flex; align-items: center; justify-content: center;
+}
+.back-top.visible { opacity: 1; transform: translateY(0); }
+.back-top:hover { background: var(--coral); }
+
+/* ===== MISC ===== */
+.divider { width: 60px; height: 2px; background: var(--gold); margin: 2rem auto; }
+.tag { display: inline-block; background: var(--cream); color: var(--ocean); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 400; margin: 0.2rem; }
+.highlight { background: linear-gradient(to right, rgba(201,169,110,0.15), transparent); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.tip-box { background: rgba(59,95,55,0.06); border-left: 3px solid var(--green); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.warning-box { background: rgba(212,101,74,0.06); border-left: 3px solid var(--coral); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.link-btn { display: inline-block; background: var(--ocean); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 400; transition: var(--transition); }
+.link-btn:hover { background: var(--coral); color: white; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+</style>
+</head>
+<body>
+
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="nav-logo">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+        <text x="12" y="27" font-family="Cormorant Garamond, serif" font-size="18" font-weight="300" font-style="italic" fill="currentColor">V</text>
+        <text x="22" y="28" font-family="Cormorant Garamond, serif" font-size="12" font-weight="600" fill="currentColor">F</text>
+      </svg>
+      V &amp; F — Australia Travel Guide
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#essentials">Essentials</a>
+      <a href="#sydney">Sydney</a>
+      <a href="#states">States</a>
+      <a href="#nz">New Zealand</a>
+      <a href="#packing">Packing</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" class="hero-monogram">
+    <defs>
+      <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#E8D5A8"/>
+        <stop offset="30%" style="stop-color:#C9A96E"/>
+        <stop offset="50%" style="stop-color:#E8D5A8"/>
+        <stop offset="70%" style="stop-color:#C9A96E"/>
+        <stop offset="100%" style="stop-color:#B8965A"/>
+      </linearGradient>
+      <filter id="emboss">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+        <feSpecularLighting in="blur" surfaceScale="3" specularConstant="0.6" specularExponent="15" result="spec" lighting-color="#fff">
+          <fePointLight x="80" y="60" z="120"/>
+        </feSpecularLighting>
+        <feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"/>
+        <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+      </feComposite>
+      </filter>
+    </defs>
+    <ellipse cx="100" cy="120" rx="85" ry="100" fill="none" stroke="url(#goldShine)" stroke-width="2" opacity="0.8"/>
+    <ellipse cx="100" cy="120" rx="80" ry="95" fill="none" stroke="url(#goldShine)" stroke-width="1" opacity="0.5"/>
+    <g filter="url(#emboss)" fill="url(#goldShine)">
+      <text x="55" y="155" font-family="Cormorant Garamond, serif" font-size="100" font-weight="300" font-style="italic" letter-spacing="-2">V</text>
+      <text x="108" y="160" font-family="Cormorant Garamond, serif" font-size="55" font-weight="600" letter-spacing="1">F</text>
+    </g>
+    <text x="100" y="200" font-family="Outfit, sans-serif" font-size="8" font-weight="300" fill="url(#goldShine)" text-anchor="middle" letter-spacing="6" opacity="0.7">EST. 2027</text>
+  </svg>
+  <p class="subtitle">A curated journey through Australia</p>
+  <h1>Australia Travel Guide</h1>
+  <p class="hero-tagline">A curated journey through Australia for the wedding guests of Vicky &amp; Fabian</p>
+  <p class="hero-date">Sydney &bull; 27 February 2027</p>
+  <a href="#welcome" class="hero-scroll">Scroll to explore</a>
+</section>
+
+
+<!-- WELCOME -->
+<section class="section" id="welcome">
+  <div class="container">
+    <h2 class="text-center">Welcome</h2>
+    <div class="divider"></div>
+    <p class="welcome-text">We met in Australia. It is a very special place to us and we wanted to share this experience with you. This travel guide is intended to help you explore the best bits of our home. We hope you will enjoy and love your time here as much as we do. Thank you for coming and celebrating with us.</p>
+    <p class="welcome-text">This guide covers everything you need to plan your trip — whether you arrive weeks before or stay on after the wedding. You&#39;ll find detailed tips for Sydney (where most of you will spend the majority of your time), plus comprehensive guides for every state across Australia, and even New Zealand for those keen to cross the ditch. Use the table of contents and navigation to jump to any section.</p>
+    
+    <div class="photo-grid">
+      <img src="photos/couple-opera-house.jpg" alt="Vicky & Fabian at Sydney Opera House" class="wide" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder wide',textContent:'Vicky & Fabian'}),this)">
+      <img src="photos/couple-harbour-sunset.jpg" alt="Vicky & Fabian at Sydney Harbour" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Sydney Harbour'}),this)">
+      <img src="photos/couple-barrenjoey-lookout.jpg" alt="Vicky & Fabian at Barrenjoey" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Barrenjoey'}),this)">
+      <img src="photos/couple-boat-golden-hour.jpg" alt="Vicky & Fabian on the harbour" class="tall" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder tall',textContent:'Golden Hour'}),this)">
+      <img src="photos/couple-beach-casual.jpg" alt="Vicky & Fabian at the beach" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Beach Day'}),this)">
+      <img src="photos/couple-seadoo-adventure.jpg" alt="Vicky & Fabian Sea-Doo adventure" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Sea-Doo Adventure'}),this)">
+      <img src="photos/couple-great-ocean-road.jpg" alt="Vicky & Fabian at Great Ocean Road" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Great Ocean Road'}),this)">
+      <img src="photos/couple-bondi-beach.jpg" alt="Vicky & Fabian at Bondi Beach" class="wide" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder wide',textContent:'Bondi Beach'}),this)">
+      <img src="photos/couple-quokka-rottnest.jpg" alt="Vicky & Fabian with a quokka" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Rottnest Island'}),this)">
+      <img src="photos/couple-rooftop-tent.jpg" alt="Vicky & Fabian in their rooftop tent" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Rooftop Tent'}),this)">
+      <img src="photos/couple-oyster-farm.jpg" alt="Vicky & Fabian at the oyster farm" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'Oyster Farm'}),this)">
+      <img src="photos/couple-darenberg-cube.jpg" alt="Vicky & Fabian at d'Arenberg Cube" onerror="this.parentElement.replaceChild(Object.assign(document.createElement('div'),{className:'img-placeholder',textContent:'d\'Arenberg Cube'}),this)">
+    </div>
+    
+    <p class="welcome-sign">— Vicky &amp; Fabian &#9825;</p>
+  </div>
+</section>
+
+
+<!-- WEDDING -->
+<section class="section section-alt" id="wedding">
+  <div class="container">
+    <div class="wedding-box">
+      <h3>The Wedding</h3>
+      <p class="wedding-date">Saturday, 27 February 2027</p>
+      <p class="wedding-detail"><strong>Pasadena Sydney</strong></p>
+      <p class="wedding-detail">1858 Pittwater Road, Church Point NSW 2105</p>
+      <p class="wedding-detail" style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">More details to follow with your invitation. We can&#39;t wait to celebrate with you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contents">
+<div class="container">
+<h2 class="text-center">Table of Contents</h2>
+<div class="divider"></div>
+<div class="toc">
+  <a href="#essentials"><span class="toc-num">01</span> Essentials</a>
+  <a href="#stopovers"><span class="toc-num">02</span> Journey & Stopovers</a>
+  <a href="#sydney"><span class="toc-num">03</span> Sydney</a>
+  <a href="#sydney-food"><span class="toc-num">04</span> Sydney Food & Drink</a>
+  <a href="#best-of-sydney"><span class="toc-num">05</span> Best Of Sydney</a>
+  <a href="#wedding-venue-area"><span class="toc-num">06</span> Around the Venue</a>
+  <a href="#nsw"><span class="toc-num">07</span> New South Wales</a>
+  <a href="#victoria"><span class="toc-num">08</span> Victoria</a>
+  <a href="#queensland"><span class="toc-num">09</span> Queensland</a>
+  <a href="#south-australia"><span class="toc-num">10</span> South Australia</a>
+  <a href="#western-australia"><span class="toc-num">11</span> Western Australia</a>
+  <a href="#tasmania"><span class="toc-num">12</span> Tasmania</a>
+  <a href="#northern-territory"><span class="toc-num">13</span> Northern Territory</a>
+  <a href="#nz"><span class="toc-num">14</span> New Zealand</a>
+  <a href="#exotic-food"><span class="toc-num">15</span> Exotic Australian Food</a>
+  <a href="#packing"><span class="toc-num">16</span> Packing & Tips</a>
+  <a href="#gallery"><span class="toc-num">17</span> Inspiration Gallery</a>
+  <a href="#slang"><span class="toc-num">18</span> Aussie Dictionary</a>
+</div>
+</div>
+</section>
+
+<!-- ESSENTIALS -->
+<section class="section section-alt" id="essentials">
+  <div class="container">
+    <h2 class="text-center">Essentials</h2>
+    <div class="divider"></div>
+    
+    <div class="essentials-grid">
+      <div class="essential-card">
+        <div class="essential-icon">🛂</div>
+        <h4>Visa</h4>
+        <p>Most European passport holders can apply for a free eVisitor (subclass 651) visa online. It allows stays of up to 3 months and is usually approved within minutes.</p>
+        <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651" target="_blank" class="link-btn">Apply for eVisitor 651</a>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">📱</div>
+        <h4>Mobile &amp; eSIM</h4>
+        <p>Get a prepaid eSIM before you arrive (~AUD $30–50 for 30 days). Airalo, Holafly, and Saily all offer easy Australian eSIM plans with good 4G/5G coverage. Alternatively, buy a Telstra or Optus prepaid SIM at the airport.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🌤️</div>
+        <h4>Climate (Jan–Apr)</h4>
+        <p>Sydney: warm and humid, 22–30°C, occasional thunderstorms. Melbourne: warm and changeable, 15–30°C, four seasons in a day. Queensland: hot and tropical in the north, 26–34°C, wet season with possible cyclones. South Australia: hot and dry, 20–35°C. Western Australia: scorching in the north, pleasant in Perth, 20–38°C. Tasmania: mild and fresh, 14–24°C. Northern Territory: wet season, hot and humid, 25–35°C, spectacular storms.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">ℹ️</div>
+        <h4>Key Info</h4>
+        <p>Currency: Australian Dollar (AUD), cards accepted almost everywhere. Time: AEDT (UTC+11) in Sydney in summer. Driving: LEFT side of the road. Emergency: 000. Power: Type I plug (three-pin). Sun: SPF 50+ is essential — the UV here is no joke. Always carry water, especially in summer. If you have a boat licence (Sportbootführerschein), bring it — it may come in handy.</p>
+      </div>
+    </div>
+    
+    <h3 class="text-center mt-2">Fun Facts</h3>
+    <div class="facts-grid">
+      <div class="fact-card">
+        <div class="fact-emoji">🐨</div>
+        <div class="fact-title">Drop Bears</div>
+        <div class="fact-text">Australians will warn you about deadly "drop bears" — carnivorous koalas that fall from trees. They don't exist. Probably.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🪃</div>
+        <div class="fact-title">Oldest Civilisation</div>
+        <div class="fact-text">Aboriginal Australians have the world's oldest continuous civilisation — over 65,000 years of history, art, and culture.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🎄</div>
+        <div class="fact-title">Upside-Down Christmas</div>
+        <div class="fact-text">Christmas in Australia falls in the middle of summer. Think BBQs on the beach, prawns, and 35°C heat — not snow.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🗺️</div>
+        <div class="fact-title">Size vs Europe</div>
+        <div class="fact-text">Australia is roughly the same size as mainland Europe, but with only 26 million people. Most of the interior is vast, empty outback.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🏖️</div>
+        <div class="fact-title">10,000+ Beaches</div>
+        <div class="fact-text">With over 10,000 beaches, you could visit a new one every day for more than 27 years. Some are still completely untouched.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">☕</div>
+        <div class="fact-title">Coffee Culture</div>
+        <div class="fact-text">Australians take coffee very seriously. Order a "flat white" — invented here (sorry, New Zealand). Starbucks failed spectacularly in Australia.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🦘</div>
+        <div class="fact-title">Aussie Slang</div>
+        <div class="fact-text">"No worries, mate" is basically the national motto. Australians shorten everything: afternoon = arvo, breakfast = brekky, McDonald's = Maccas.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🕷️</div>
+        <div class="fact-title">Deadly Reputation</div>
+        <div class="fact-text">Yes, Australia has dangerous wildlife, but fatalities are incredibly rare. You're far more likely to get sunburnt than bitten. Wear sunscreen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOURNEY & STOPOVERS -->
+<section class="section" id="stopovers">
+  <div class="container">
+    <h2 class="text-center">Journey &amp; Stopovers</h2>
+    <div class="divider"></div>
+    <p class="welcome-text">The flight from Europe to Australia is long — typically 20–24 hours with one stop. The good news is that most routes pass through incredible cities that are worth a stopover of 2–4 days, either on the way out or on the way home. Here are our top recommendations.</p>
+    
+    <div class="stopover-grid">
+      <div class="stopover-card">
+        <div class="essential-icon">🏙️</div>
+        <h4>Dubai</h4>
+        <p>World-class shopping, the Burj Khalifa, desert safaris, and incredible food. Emirates flies direct from most European cities. A great 2–3 day stopover.</p>
+      </div>
+      <div class="stopover-card">
+        <div class="essential-icon">🌴</div>
+        <h4>Singapore</h4>
+        <p>A foodie paradise with stunning architecture, Gardens by the Bay, and hawker centres. Singapore Airlines is consistently rated the world's best. Perfect for 2–3 days.</p>
+      </div>
+      <div class="stopover-card">
+        <div class="essential-icon">🛕</div>
+        <h4>Bangkok</h4>
+        <p>Temples, street food, floating markets, and vibrant nightlife. Incredibly affordable and endlessly exciting. Great for 3–4 days if you have the time.</p>
+      </div>
+      <div class="stopover-card">
+        <div class="essential-icon">🕌</div>
+        <h4>Doha</h4>
+        <p>The Museum of Islamic Art, the Souq Waqif, desert adventures, and superb dining. Qatar Airways offers easy connections. A solid 2-day stop.</p>
+      </div>
+    </div>
+    
+    <div class="tip-box">
+      <strong>Flight tip:</strong> These stopovers work equally well on the way out or on the way home. Book an open-jaw ticket (e.g. fly into Sydney, out of Auckland or Cairns) for maximum flexibility. Qantas, Singapore Airlines, Emirates, and Qatar Airways all offer excellent service on this route.
+    </div>
+  </div>
+</section>
+
+
+<!-- SYDNEY -->
+<section class="section section-alt" id="sydney">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/1878293/pexels-photo-1878293.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sydney Opera House" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>Sydney</div>'">
+      <div class="banner-overlay"><h2>Sydney (10–14 Days)</h2></div>
+    </div>
+    
+    <p>Sydney is where we live and where most of you will spend the majority of your time. It&#39;s a world-class city with one of the most beautiful harbours on Earth, incredible beaches, outstanding food, and a relaxed outdoor lifestyle that is hard to beat. Here are our top 20 must-do experiences.</p>
+
+    <div class="exp-item">
+      <h4><span class="exp-num">01</span> Bondi to Coogee Coastal Walk</h4>
+      <p>One of Sydney's most iconic walks — a 6km trail along dramatic sandstone cliffs, past stunning ocean pools and hidden beaches. Start at Bondi Icebergs, wind through Tamarama and Bronte, and finish with a drink at Coogee Pavilion. Do it in the morning for the best light and fewer crowds.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">02</span> Sydney Opera House Tour</h4>
+      <p>No trip to Sydney is complete without seeing the Opera House up close. Book a guided tour to explore the iconic sails from inside, or better yet, catch a performance — there&#39;s everything from opera to comedy. The architecture is even more breathtaking in person. <a href="https://www.sydneyoperahouse.com" target="_blank">Book at sydneyoperahouse.com</a>.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">03</span> Harbour Bridge Walk &amp; The Rocks</h4>
+      <p>Walk across the Harbour Bridge for free via the pedestrian path — the views are spectacular. Then explore The Rocks, Sydney's oldest neighbourhood, with its cobblestone laneways, weekend markets, and colonial-era pubs. Pop into the Art Gallery of NSW rooftop for harbour views, and grab a pale ale or cider at Squires Landing right on the water.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">04</span> Manly Ferry</h4>
+      <p>Take the iconic Manly Ferry from Circular Quay — the 30-minute ride through the harbour is an experience in itself. At Manly, walk the Corso to the beach, rent a surfboard, or do the Spit to Manly walk (10km, stunning). The ferry ride back at sunset is unforgettable.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">05</span> Taronga Zoo</h4>
+      <p>Take the ferry across to Taronga Zoo for close encounters with Australian wildlife against one of the world's best backdrops. See koalas, platypus, kangaroos, and the famous giraffe enclosure with harbour views. The Sky Safari cable car ride down to the wharf is a highlight.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">06</span> Blue Mountains Day Trip</h4>
+      <p>A must-do day trip, about 90 minutes west of Sydney. The Three Sisters at Echo Point, the Scenic Railway (world's steepest), and endless hiking trails through ancient eucalyptus forest. Visit Wentworth Falls and stop in Leura village for lunch. Leave early to beat the crowds.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">07</span> Botanic Gardens → Mrs Macquarie&#39;s Chair → China Doll</h4>
+      <p>Start at the Royal Botanic Gardens for a peaceful waterfront stroll, continue to Mrs Macquarie's Chair for the most photographed view of the Opera House and Bridge together, then walk along Woolloomooloo Wharf to China Doll for outstanding Asian-fusion lunch with harbour views.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">08</span> Seaplane from Rose Bay, Hermitage Foreshore &amp; Watsons Bay</h4>
+      <p>Fly a seaplane from Rose Bay over the harbour — the views are extraordinary. Alternatively, walk the Hermitage Foreshore Track from Rose Bay to Vaucluse for secret harbour beaches. End at Watsons Bay, one of our favourite spots — great vibes, incredible views, and excellent food and drinks at the Watsons Bay Boutique Hotel.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">09</span> Palm Beach &amp; Barrenjoey Lighthouse</h4>
+      <p>Sydney's northernmost beach and the filming location of Home &amp; Away. Climb to Barrenjoey Lighthouse for 360-degree views of the coast and Pittwater. Pack a picnic and make a half-day of it. This area is close to our wedding venue — you'll love it.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">10</span> Barangaroo Sunset</h4>
+      <p>Head to Barangaroo Reserve in the late afternoon and find a spot along the harbour foreshore. Watch the sun set behind the Bridge while the city lights come on. It's one of Sydney's best free experiences. Grab a drink at one of the nearby waterfront bars afterwards.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">11</span> Sydney Fish Market</h4>
+      <p>The third-largest fish market in the world. Come for breakfast or an early lunch — buy the freshest sushi, oysters, and grilled fish you'll ever taste, and eat right by the water. Get there before 10am on weekends to avoid the crowds. The new market building is impressive.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">12</span> Harbour Kayaking</h4>
+      <p>Rent a kayak and paddle right past the Opera House and under the Harbour Bridge — it's an entirely different perspective of the city. Sunrise sessions are magical when the harbour is glassy and quiet. Several operators run guided tours from Lavender Bay.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">13</span> Opera Bar Sunset</h4>
+      <p>Grab a table at Opera Bar, right underneath the sails of the Opera House, and watch the sun set over the Bridge. The atmosphere is electric, the views are world-class, and the drinks are surprisingly reasonable. It's Sydney at its absolute best. Go on a Friday for live music.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">14</span> Darling Harbour Evening</h4>
+      <p>Darling Harbour comes alive in the evening with waterfront restaurants, bars, and the new harbourside precinct. It's a great area for a night out with dozens of venues to choose from — from cocktail bars to casual pubs to live music. The ICC events calendar is worth checking too.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">15</span> Skydiving over Wollongong Beach</h4>
+      <p>If not here, where? Tandem skydive from 15,000 feet over Wollongong's stunning coastline. You freefall for 60 seconds with views of the Illawarra escarpment, the Pacific Ocean, and on clear days, all the way to Sydney. An unforgettable experience — and surprisingly affordable.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">16</span> Royal National Park Coast Track</h4>
+      <p>Australia's oldest national park, just south of Sydney. The Coast Track is a stunning two-day hike (or a challenging one-day walk) along dramatic clifftops, past Wedding Cake Rock, through rainforest, and down to secluded beaches. Even a half-day section from Bundeena is spectacular.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">17</span> Hunter Valley Wine Tasting</h4>
+      <p>Australia's oldest wine region, about 2.5 hours north of Sydney. Over 150 wineries producing outstanding Semillon and Shiraz. Book a day tour or stay overnight. Highlights include Tyrrell's, Brokenback, and the cheese and chocolate shops along the route.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">18</span> Rainy Day: Museums &amp; Shows</h4>
+      <p>If the weather turns (and it does in Sydney), head to the Art Gallery of NSW (free, world-class), the Australian Museum (natural history), the MCA (contemporary art at Circular Quay), or the Powerhouse Museum (science and design). Or book a show at the Opera House — there&#39;s always something on.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">19</span> Watsons Bay Sundowner</h4>
+      <p>We keep coming back to Watsons Bay because it's simply one of Sydney's most magical spots. Take the ferry from Circular Quay, stroll along the cliff walk to South Head, then settle in at the Boutique Hotel beer garden as the sun drops over the harbour. Fish and chips, a cold drink, golden light — perfection.</p>
+    </div>
+    <div class="exp-item">
+      <h4><span class="exp-num">20</span> Secret Sydney: Hidden Gems</h4>
+      <p>For those who want to go beyond the tourist trail: swim at the stunning Mahon Pool in Maroubra (a natural rock pool carved into the cliffs), explore the street art in Newtown, catch live jazz at Venue 505, or take a dawn swim at North Curl Curl rock pool. Sydney rewards curiosity.</p>
+    </div>
+
+    <h3 class="mt-2">Suggested 10-Day Sydney Itinerary</h3>
+    <div class="mb-2">
+      <div class="itin-day">
+        <div class="itin-label">Day 1</div>
+        <h4>Arrival & The Rocks</h4>
+        <p>Settle into your accommodation and shake off the jet lag with a gentle walk through The Rocks and Circular Quay. Grab a coffee at a harbourside café, soak in your first views of the Opera House and Bridge, and explore the weekend markets if you arrive on a Saturday. Ease into Sydney time with dinner at a waterfront restaurant.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 2</div>
+        <h4>Harbour Icons</h4>
+        <p>Start at the Royal Botanic Gardens, walk to Mrs Macquarie's Chair for that iconic dual view, then continue to the Opera House for a guided tour. Walk across the Harbour Bridge for free via the pedestrian path. End at Squires Landing in The Rocks for a celebratory first pale ale.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 3</div>
+        <h4>Bondi to Coogee</h4>
+        <p>Do the Bondi to Coogee coastal walk in the morning when the light is golden and the crowds are thin. Stop at Bronte for a swim, and finish at Coogee Pavilion for a long, lazy lunch with ocean views. Spend the afternoon relaxing on the beach before heading to Icebergs for sunset drinks.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 4</div>
+        <h4>Manly & Northern Beaches</h4>
+        <p>Ferry to Manly, surf or swim at the beach, then explore the Corso and Manly Wharf. If you're ambitious, do the Spit to Manly walk beforehand (start early). Take the ferry back at sunset for one of Sydney's best free experiences — golden light on the harbour.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 5</div>
+        <h4>Blue Mountains</h4>
+        <p>Leave early for the Blue Mountains. See the Three Sisters, ride the Scenic Railway, and hike to Wentworth Falls. Stop in Leura for lunch at a charming café. It's a full day, but the ancient forests and vast blue valleys are worth every minute. You'll understand why they're called 'blue.'</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 6</div>
+        <h4>Watsons Bay & Rose Bay</h4>
+        <p>Walk the Hermitage Foreshore Track from Rose Bay past hidden harbour beaches to Vaucluse. Take the ferry to Watsons Bay, do the cliff walk to South Head for jaw-dropping views, then settle in at the Boutique Hotel for fish and chips, beer, and one of Sydney's best sunsets.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 7</div>
+        <h4>Taronga Zoo & Barangaroo</h4>
+        <p>Ferry to Taronga Zoo in the morning — see Australian wildlife with the harbour as your backdrop. Take the Sky Safari cable car down. In the afternoon, explore Barangaroo Reserve and stay for sunset drinks at one of the waterfront bars.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 8</div>
+        <h4>Palm Beach & Barrenjoey</h4>
+        <p>Drive or bus to Palm Beach, Sydney's northernmost point. Climb to Barrenjoey Lighthouse for panoramic views, swim at the beach, and explore the area around our wedding venue. Lunch at The Boathouse at Palm Beach is a treat. This is one of our favourite parts of Sydney.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 9</div>
+        <h4>Food, Culture & Nightlife</h4>
+        <p>Start with breakfast at Bills Surry Hills, explore Newtown and its street art, visit the Art Gallery of NSW, and do some shopping in Paddington. In the evening, head to Darling Harbour for dinner and drinks — it's a fantastic area for a night out with dozens of venues.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-label">Day 10</div>
+        <h4>Fish Market, Kayak & Opera Bar</h4>
+        <p>Start early at the Fish Market for the freshest seafood breakfast. Try harbour kayaking past the Opera House. Spend the afternoon at leisure — beach, shopping, or museum. Finish your Sydney adventure at Opera Bar with sunset drinks under the sails. A perfect farewell to the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYDNEY FOOD & DRINK -->
+<section class="section" id="sydney-food">
+  <div class="container">
+    <h2 class="text-center">Sydney Food &amp; Drink</h2>
+    <div class="divider"></div>
+    <p class="welcome-text">Sydney's food scene is world-class. Fresh seafood, incredible Asian fusion, outstanding coffee, and a bar culture that rivals any global city. Here are our favourites.</p>
+
+    <div class="food-section">
+      <button class="food-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('active')">Breakfast</button>
+      <div class="food-content">
+        <div class="food-item"><span class="food-name">Bills Surry Hills</span> — The birthplace of the famous ricotta hotcakes. Bill Granger put Sydney breakfast culture on the map. Go early on weekends.
+        </div>
+        <div class="food-item"><span class="food-name">Speedos Café</span> — Right on Bondi Beach with a colourful, Instagrammable interior. Great smoothie bowls and the beach is steps away.
+        </div>
+        <div class="food-item"><span class="food-name">Reuben Hills</span> — Specialty coffee roasters in Surry Hills with Latin American-inspired brunch. The café con leche and corn fritters are outstanding.
+        </div>
+        <div class="food-item"><span class="food-name">Grounds of Alexandria</span> — A sprawling garden café in a converted warehouse. Kevin Bacon the pig lives in the courtyard. Yes, really. The pastries are incredible.
+        </div>
+        <div class="food-item"><span class="food-name">Three Blue Ducks</span> — Farm-to-table brunch in Bronte. Seasonal, sustainable, and delicious. Worth the wait on weekends.
+        </div>
+        <div class="food-item"><span class="food-name">Devon Café</span> — Creative, beautifully plated brunch dishes in Surry Hills. The shakshuka and the matcha pancakes are standout.
+        </div>
+      </div>
+    </div>
+    <div class="food-section">
+      <button class="food-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('active')">Lunch</button>
+      <div class="food-content">
+        <div class="food-item"><span class="food-name">Sydney Fish Market</span> — The freshest seafood in the southern hemisphere. Buy oysters, sushi, or grilled fish and eat by the water.
+        </div>
+        <div class="food-item"><span class="food-name">China Doll</span> — Outstanding Asian-fusion on Woolloomooloo Wharf with harbour views. The kingfish sashimi is exceptional.
+        </div>
+        <div class="food-item"><span class="food-name">The Boathouse</span> — Beautiful waterfront cafés at Palm Beach and Balmoral. Fresh, seasonal, and impossibly scenic.
+        </div>
+        <div class="food-item"><span class="food-name">Spice Alley</span> — A hidden hawker-style laneway in Chippendale with cheap, authentic Asian street food from multiple vendors.
+        </div>
+        <div class="food-item"><span class="food-name">Squires Landing</span> — Craft beer and casual food right under the Harbour Bridge in The Rocks. Grab a pale ale or cider on the terrace.
+        </div>
+        <div class="food-item"><span class="food-name">Coogee Pavilion</span> — Multi-level venue right on Coogee Beach. Great for a long lunch with ocean views after the coastal walk.
+        </div>
+      </div>
+    </div>
+    <div class="food-section">
+      <button class="food-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('active')">Dinner</button>
+      <div class="food-content">
+        <div class="food-item"><span class="food-name">Bisteca</span> — A two-level Italian steakhouse in the CBD.
+        <div class="food-tip">Fabian's secret tip: the best steakhouse in Sydney. The Bistecca alla Fiorentina is perfection. Book well in advance — it fills up fast.</div>
+        </div>
+        <div class="food-item"><span class="food-name">Quay</span> — Three-hatted fine dining at the Opera House with front-row harbour views. A true bucket-list dining experience.
+        </div>
+        <div class="food-item"><span class="food-name">Icebergs Dining Room</span> — Perched above Bondi's famous ocean pool. Italian-Australian cuisine with the most dramatic dining view in Sydney.
+        </div>
+        <div class="food-item"><span class="food-name">Firedoor</span> — Everything is cooked over fire — no gas, no electricity in the kitchen. Chef Lennox Hastie is a genius with flame. A unique experience.
+        </div>
+        <div class="food-item"><span class="food-name">Alegria</span> — Modern Mexican at Darling Harbour.
+        <div class="food-tip">Our favourite restaurant. Great vibes, creative cocktails, and the tacos are incredible. Perfect for a fun night out.</div>
+        </div>
+        <div class="food-item"><span class="food-name">Bennelong</span> — Inside the sails of the Opera House itself. Australian fine dining with outstanding produce and an unforgettable setting.
+        </div>
+        <div class="food-item"><span class="food-name">Cho Cho San</span> — Modern Japanese izakaya in Potts Point. The handmade gyoza and hiramasa kingfish are superb. Buzzy atmosphere.
+        </div>
+      </div>
+    </div>
+    <div class="food-section">
+      <button class="food-toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('active')">Bars</button>
+      <div class="food-content">
+        <div class="food-item"><span class="food-name">Opera Bar</span> — Under the sails with Bridge views. The quintessential Sydney sundowner. Friday nights have live music.
+        </div>
+        <div class="food-item"><span class="food-name">Maybe Sammy</span> — One of the world's best bars, hidden in The Rocks. Theatrical cocktails in a glamorous 1950s Miami-inspired space.
+        </div>
+        <div class="food-item"><span class="food-name">The Baxter Inn</span> — A speakeasy-style whisky bar down a back alley in the CBD. Over 800 whiskies. The atmosphere is electric.
+        </div>
+        <div class="food-item"><span class="food-name">Frankie's Pizza</span> — Underground rock-and-roll pizza bar in the CBD. Free live music every night, pizza by the slice, and a brilliantly chaotic vibe.
+        </div>
+        <div class="food-item"><span class="food-name">Darling Harbour</span> — Not a single bar but an entire precinct.
+        <div class="food-tip">Dozens of bars and restaurants lining the waterfront — a great area for a night out with options for every taste and budget.</div>
+        </div>
+        <div class="food-item"><span class="food-name">Earl's Juke Joint</span> — Intimate cocktail bar in Newtown with a jazz and blues soundtrack. Excellent drinks in a cosy, candlelit setting.
+        </div>
+        <div class="food-item"><span class="food-name">Ivy Pool Bar</span> — The famous rooftop pool bar at Ivy in the CBD. Trendy, fun, and great for daytime drinks when the weather is good.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST OF SYDNEY -->
+<section class="section section-alt" id="best-of-sydney">
+  <div class="container">
+    <h2 class="text-center">Best Of Sydney</h2>
+    <div class="divider"></div>
+    <div class="best-grid">
+      <div class="best-box">
+        <h4>☀️ Best Sunrise</h4>
+        <p>Bondi Beach (from the south end by Icebergs), Bronte rock pool, or Mrs Macquarie's Chair for the harbour. Early risers are rewarded.</p>
+      </div>
+      <div class="best-box">
+        <h4>🌅 Best Sunset</h4>
+        <p>Watsons Bay (our favourite — golden light over the harbour), Barangaroo Reserve, Opera Bar, or Milk Beach in Vaucluse for a secret spot.</p>
+      </div>
+      <div class="best-box">
+        <h4>🏖️ Best Beaches</h4>
+        <p>Bondi (iconic), Manly (great surf), Shelly Beach (snorkelling), Palm Beach (peaceful), Cronulla — our local beach, say hi if you visit!</p>
+      </div>
+      <div class="best-box">
+        <h4>🚶 Best Coastal Walks</h4>
+        <p>Bondi to Coogee (6km, classic), Spit to Manly (10km, diverse), Hermitage Foreshore (easy, harbour views), South Head Heritage Trail (dramatic).</p>
+      </div>
+      <div class="best-box">
+        <h4>🥾 Best Hikes</h4>
+        <p>Blue Mountains (Three Sisters, Wentworth Falls, Grand Canyon Track), Royal National Park Coast Track, Barrenjoey Lighthouse, Ku-ring-gai Chase.</p>
+      </div>
+      <div class="best-box">
+        <h4>🍸 Best Going Out</h4>
+        <p>Darling Harbour (dozens of waterfront venues, great for a night out), Newtown (live music, craft beer), Surry Hills (cocktail bars), The Rocks (historic pubs).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AROUND THE WEDDING VENUE -->
+<section class="section" id="wedding-venue-area">
+  <div class="container">
+    <h2 class="text-center">Around the Wedding Venue</h2>
+    <div class="divider"></div>
+    <p class="welcome-text">Our wedding venue, Pasadena Sydney, is on the beautiful Northern Beaches at Church Point. This area is one of Sydney&#39;s hidden gems — quiet waterways, national parks, and stunning coastal scenery. Here&#39;s what to explore nearby.</p>
+    
+    <div class="card-grid">
+      <div class="card"><div class="card-body">
+        <h4>Church Point &amp; Scotland Island</h4>
+        <p>Church Point is a charming waterfront village on Pittwater. Take the Church Point Ferry across to Scotland Island — a tiny, car-free island community with a wonderful local pub (the Island Bar) and beautiful walking trails. It feels like stepping into another world.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Palm Beach &amp; Barrenjoey Lighthouse</h4>
+        <p>Just up the road from the venue. Iconic beach, Home &amp; Away filming location, and the Barrenjoey Lighthouse walk with panoramic views of the ocean and Pittwater. Allow 45 minutes for the walk up.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Ku-ring-gai Chase National Park</h4>
+        <p>Right on the doorstep. Drive to West Head Lookout for breathtaking views over Pittwater and Broken Bay. Walk the America Bay Track to a hidden waterfall in the bush. Aboriginal rock engravings, wildflowers, and pristine bushland.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Whale Beach</h4>
+        <p>A quieter, more exclusive beach between Palm Beach and Avalon. Golden sand, turquoise water, and far fewer crowds than the famous beaches. The Whale Beach Deli is great for lunch.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Pittwater Kayaking</h4>
+        <p>Rent a kayak at Church Point or Bayview and paddle the calm waters of Pittwater. You&#39;ll glide past secluded beaches, bushland shores, and houseboats. It&#39;s peaceful, scenic, and a wonderful way to spend a morning.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEW SOUTH WALES -->
+<section class="section section-alt" id="nsw">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg?auto=compress&cs=tinysrgb&w=800" alt="NSW Coast" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>New South Wales</div>'">
+      <div class="banner-overlay"><h2>New South Wales</h2></div>
+    </div>
+    
+    <h3>South Coast</h3>
+    <p>The NSW South Coast is one of Australia&#39;s most underrated stretches of coastline. From dramatic sea cliffs to the whitest sand in the world, it&#39;s perfect for a road trip south from Sydney.</p>
+    
+    <div class="highlight">If you&#39;re around our area, say hi to us in Oyster Bay or meet us at Cronulla Beach — our local beach!</div>
+    
+    <div class="exp-item">
+      <h4>Grand Pacific Drive</h4>
+      <p>Start with the Grand Pacific Drive — a scenic route south from Sydney crossing the stunning Sea Cliff Bridge, which clings to the cliffs above the Pacific. Continue to Kiama, famous for its blowhole and beautiful lighthouse. The whole drive is spectacular.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Jervis Bay &amp; Hyams Beach</h4>
+      <p>Hyams Beach holds the Guinness Record for the whitest sand in the world. Jervis Bay itself is a marine paradise — crystal-clear water, dolphins, and outstanding snorkelling. Visit Booderee National Park nearby for secluded beaches and bushwalks.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Kangaroo Valley &amp; Berry</h4>
+      <p>A picturesque green valley inland from the coast with the historic Hampden Bridge and canoeing on the Kangaroo River. Nearby Berry is a charming village with excellent cafés, boutique shops, and the famous Berry Donut Van.</p>
+    </div>
+    
+    <h3 class="mt-2">Byron Bay &amp; North Coast</h3>
+    <div class="exp-item">
+      <h4>Port Stephens</h4>
+      <p>About 2.5 hours north of Sydney. Famous for dolphin watching (resident population of ~160 bottlenose dolphins), massive sand dunes for sandboarding, and excellent whale watching (May–November).</p>
+    </div>
+    <div class="exp-item">
+      <h4>Cape Byron &amp; Byron Bay</h4>
+      <p>Australia&#39;s most easterly point. Walk to the Cape Byron Lighthouse for whale spotting, surf at The Pass, and soak up the laid-back bohemian vibe. The Byron hinterland has outstanding restaurants and rainforest walks.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- VICTORIA -->
+<section class="section" id="victoria">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Twelve Apostles" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>Victoria</div>'">
+      <div class="banner-overlay"><h2>Victoria</h2></div>
+    </div>
+    
+    <div class="exp-item">
+      <h4>Melbourne &amp; Laneways</h4>
+      <p>Melbourne is Australia's cultural capital — world-famous street art in Hosier Lane, incredible coffee culture, the buzzing laneways filled with hidden bars and restaurants, and outstanding live music and comedy. It's a city that rewards exploration on foot. Don't miss the Queen Victoria Market and a tram ride through the CBD.</p>
+    </div>
+    <div class="exp-item">
+      <h4>St Kilda Penguins</h4>
+      <p>Every evening at dusk, a colony of little penguins waddles ashore at the St Kilda Pier breakwater. It's free to watch and utterly charming. Combine it with a sunset stroll along St Kilda Beach and dinner on Acland Street.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Great Ocean Road</h4>
+      <p>One of the world's most scenic coastal drives. The Twelve Apostles are the showstopper, but the entire route is breathtaking — rainforest, surf beaches, and dramatic clifftop views.</p>
+      <div class="warning-box"><strong>Important:</strong> The Great Ocean Road is a LONG day trip from Melbourne — allow 12–14 hours round trip. Depart very early (6–7am) to make the most of daylight and avoid being rushed. Consider staying overnight in Lorne or Apollo Bay if you can.</div>
+    </div>
+    <div class="exp-item">
+      <h4>Yarra Valley</h4>
+      <p>Melbourne's wine region, just an hour east of the city. Outstanding Pinot Noir and Chardonnay, with over 80 cellar doors. Combine with the stunning Healesville Sanctuary for native wildlife encounters.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Phillip Island Penguins</h4>
+      <p>The famous Penguin Parade — hundreds of little penguins emerge from the sea at sunset and waddle up the beach to their burrows. A magical experience, especially the premium viewing platforms. About 90 minutes from Melbourne.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- QUEENSLAND -->
+<section class="section section-alt" id="queensland">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/3369102/pexels-photo-3369102.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Great Barrier Reef" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>Queensland</div>'">
+      <div class="banner-overlay"><h2>Queensland</h2></div>
+    </div>
+    
+    <h3>Cairns &amp; Tropical North</h3>
+    <div class="exp-item">
+      <h4>Great Barrier Reef</h4>
+      <p>The world's largest coral reef system and one of the natural wonders of the world. Snorkel or dive from Cairns or Port Douglas — the colours and marine life are extraordinary. Choose an outer reef trip for the best visibility and coral. A scenic helicopter flight over the reef is also unforgettable.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Sea-Doo Ride from Cairns</h4>
+      <p>Explore the tropical coastline on a jet ski. No licence is needed in Queensland to ride a jet ski — book through a local operator in Cairns or Port Douglas. It's an exhilarating way to see the coast, and the warm tropical water makes it even better.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Daintree Rainforest</h4>
+      <p>The world's oldest tropical rainforest (over 180 million years old). Take the cable ferry across the Daintree River, walk the boardwalks through ancient canopy, and visit Cape Tribulation where the rainforest meets the reef. Overnight stays are magical — the sounds of the jungle at night are incredible.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Atherton Tablelands &amp; Port Douglas</h4>
+      <p>The lush highlands behind Cairns with stunning waterfalls (Millaa Millaa, Zillie), crater lakes, and platypus spotting. Port Douglas is an upscale coastal town with Four Mile Beach and a more relaxed pace than Cairns. The Sunday Markets are excellent.</p>
+    </div>
+    
+    <h3 class="mt-2">Whitsundays</h3>
+    <div class="highlight">
+      <h4>Whitehaven Beach &amp; Hill Inlet</h4>
+      <p>This is my absolute favourite place in Australia. Whitehaven Beach is 7km of the purest white silica sand you've ever seen, and Hill Inlet — where the tide swirls the sand and turquoise water into ever-changing patterns — is genuinely one of the most beautiful things on Earth. Take a seaplane or helicopter for the aerial view, or a boat trip from Airlie Beach. Stay on a sailing yacht overnight if you can. This is a must-do. Trust me on this one. — Fabian</p>
+    </div>
+    <div class="exp-item">
+      <h4>Skydiving over Airlie Beach</h4>
+      <p>If you're going to skydive anywhere, doing it over the Whitsundays with views of the islands, reef, and Whitehaven Beach below you is pretty hard to beat. Several operators run tandem jumps from 15,000 feet.</p>
+    </div>
+    
+    <h3 class="mt-2">Gold Coast &amp; Burleigh</h3>
+    <div class="exp-item">
+      <h4>Burleigh Heads &amp; Gold Coast</h4>
+      <p>Burleigh Heads is the Gold Coast's coolest neighbourhood — great surf, the Burleigh headland walk through rainforest, and a buzzing café and restaurant scene. The Gold Coast itself offers theme parks (if that's your thing), canal cruises, and the hinterland with Springbrook and Lamington National Parks.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOUTH AUSTRALIA -->
+<section class="section" id="south-australia">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/442116/pexels-photo-442116.jpeg?auto=compress&cs=tinysrgb&w=800" alt="South Australian Wines" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>South Australia</div>'">
+      <div class="banner-overlay"><h2>South Australia</h2></div>
+    </div>
+    
+    <div class="exp-item">
+      <h4>Adelaide &amp; Hahndorf</h4>
+      <p>Adelaide is a charming, walkable city with outstanding food and wine culture. The Central Market is a must. Just 25 minutes away is Hahndorf — Australia's oldest surviving German settlement, founded in 1839 by Lutheran refugees from Prussia. It's a surreal little taste of home for our German guests: German bakeries, beer halls, and a main street that could be in the Bavarian countryside. Try the Bienenstich at the German Cake Shop.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Barossa Valley</h4>
+      <p>One of the world's great wine regions, just an hour from Adelaide. Famous for its bold Shiraz — some vines are over 150 years old, among the oldest in the world. Visit Penfolds, Henschke, and Seppeltsfield for outstanding tastings. The food scene is equally impressive, with farm-to-table restaurants throughout the valley.</p>
+    </div>
+    <div class="exp-item">
+      <h4>McLaren Vale &amp; d'Arenberg Cube</h4>
+      <p>A stunning wine region south of Adelaide with beautiful rolling hills and over 80 cellar doors. The d'Arenberg Cube is the highlight — a striking, Rubik's Cube-shaped building housing a multi-level wine experience, a restaurant with panoramic views, and interactive art installations. The wines (especially the Shiraz and Grenache) are exceptional.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Kangaroo Island</h4>
+      <p>Australia's Galápagos — a pristine island off the SA coast teeming with wildlife. See sea lions at Seal Bay, koalas in the wild, and remarkable rock formations at Remarkable Rocks. Allow at least 2 days. The local produce — honey, gin, oysters — is outstanding. Take the ferry from Cape Jervis.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WESTERN AUSTRALIA -->
+<section class="section section-alt" id="western-australia">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Western Australia" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>Western Australia</div>'">
+      <div class="banner-overlay"><h2>Western Australia</h2></div>
+    </div>
+    
+    <h3>Perth &amp; Surrounds</h3>
+    <div class="exp-item">
+      <h4>Perth, Kings Park &amp; Fremantle</h4>
+      <p>Perth is a relaxed, sunny city with outstanding beaches. Kings Park offers sweeping views over the city and Swan River from its elevated botanic gardens. Take the train to Fremantle for its historic port, weekend markets (the Fremantle Markets are legendary), craft breweries, and excellent seafood at Bathers Beach House.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Rottnest Island &amp; Quokkas</h4>
+      <p>A car-free island paradise just 25 minutes by ferry from Fremantle. Rent a bike and cycle between pristine bays, snorkel in crystal-clear water, and meet the famous quokkas — the world's happiest animal. The quokka selfie is an Australian rite of passage. Allow a full day.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Pinnacles &amp; Lancelin Sand Dunes</h4>
+      <p>The Pinnacles Desert in Nambung National Park is otherworldly — thousands of limestone pillars rising from golden sand. Nearby Lancelin has massive white sand dunes perfect for sandboarding. Nothing beats tearing across sand on a BRP quad bike — ATV tours through the dunes are an absolute blast.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Margaret River</h4>
+      <p>A world-class wine region about 3 hours south of Perth. Outstanding Cabernet Sauvignon and Chardonnay, plus stunning coastline, ancient caves (Jewel Cave, Mammoth Cave), and excellent surfing. The food and wine here rival anywhere in Australia.</p>
+    </div>
+    
+    <h3 class="mt-2">WA North — Extended Adventure</h3>
+    <p>For those with more time, the coast of Western Australia north of Perth is among the most spectacular and least visited stretches of coastline on Earth. This is raw, wild Australia at its absolute best.</p>
+    
+    <div class="exp-item">
+      <h4>Ningaloo Reef</h4>
+      <p>Australia's other great reef — and in many ways even better than the Great Barrier Reef because you can snorkel right from the shore. Swim with whale sharks (March–July), manta rays, and humpback whales. The coral is pristine and the marine life is staggering. Exmouth and Coral Bay are the main access points.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Coral Bay &amp; Turquoise Bay</h4>
+      <p>Coral Bay is a tiny, remote outpost with a beautiful reef just metres from the beach. Turquoise Bay in Cape Range National Park is regularly rated one of Australia's best beaches — the drift snorkel here, where the current carries you along pristine coral, is extraordinary.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Shark Bay &amp; Shell Beach</h4>
+      <p>A UNESCO World Heritage area with the famous Shell Beach — a beach made entirely of billions of tiny white shells, stretching for over 100km. Visit Monkey Mia for wild dolphin interactions, and see the ancient stromatolites at Hamelin Pool — some of Earth's oldest living organisms.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Hutt Lagoon Pink Lake</h4>
+      <p>An extraordinary bubblegum-pink lake caused by algae and high salinity. The colour is most vivid in summer (around February — when you'll be here). Best viewed from above or from the roadside. It's surreal and utterly photogenic.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TASMANIA -->
+<section class="section" id="tasmania">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tasmania" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>Tasmania</div>'">
+      <div class="banner-overlay"><h2>Tasmania</h2></div>
+    </div>
+    
+    <div class="exp-item">
+      <h4>Hobart &amp; MONA</h4>
+      <p>Tasmania's capital is compact, charming, and home to the extraordinary Museum of Old and New Art (MONA) — built into a sandstone cliff, housing a provocative and unforgettable private art collection. Take the MONA ferry there. The Salamanca Market (Saturdays) is one of Australia's best, and Hobart's food scene — especially fresh seafood — is outstanding.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Bruny Island &amp; Get Shucked Oysters</h4>
+      <p>A beautiful island south of Hobart accessible by a short ferry. The highlight is Get Shucked — an oyster farm where you sit by the water and eat freshly shucked oysters with a glass of Tasmanian wine. Also visit the Bruny Island Cheese Company and the stunning Neck viewpoint.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Wineglass Bay &amp; Freycinet</h4>
+      <p>One of the world's most photographed beaches. The walk to the Wineglass Bay Lookout takes about 45 minutes and reveals a perfect crescent of white sand and turquoise water surrounded by pink granite peaks. Continue down to the beach if you have time — it's worth it.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Bay of Fires</h4>
+      <p>Named for the orange lichen on its granite boulders, the Bay of Fires is a series of stunning beaches along Tasmania's northeast coast. Crystal-clear water, white sand, and those extraordinary orange-red rocks. It's often deserted — a beach lover's dream.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Cradle Mountain &amp; Dove Lake</h4>
+      <p>The icon of Tasmania's wilderness. The walk around Dove Lake (6km, 2–3 hours) is one of the most scenic in Australia, with Cradle Mountain reflected in the still water. Come at dusk to spot wombats grazing on the boardwalks — they're wonderfully unfazed by people.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- NORTHERN TERRITORY -->
+<section class="section section-alt" id="northern-territory">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Uluru" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>Northern Territory</div>'">
+      <div class="banner-overlay"><h2>Northern Territory</h2></div>
+    </div>
+    
+    <div class="exp-item">
+      <h4>Uluru Sunset &amp; Field of Light</h4>
+      <p>Uluru at sunset is one of the most powerful natural spectacles on Earth — the rock glows deep red, orange, and purple as the light changes. The Field of Light installation (by artist Bruce Munro) transforms the desert floor into 50,000 glowing stems at night. It's magical and moving in equal measure.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Base Walk &amp; Kata Tjuta</h4>
+      <p>Walk the 10km base trail around Uluru to understand its true scale and spiritual significance — the rock art, waterholes, and geological formations are extraordinary. Nearby Kata Tjuta (the Olgas) is equally stunning: the Valley of the Winds walk offers dramatic views through towering red domes.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Kings Canyon</h4>
+      <p>The rim walk at Kings Canyon (6km loop) takes you along the edge of 100m-high sandstone walls with views over the vast desert landscape. The Garden of Eden — a permanent waterhole surrounded by lush vegetation — is a surreal oasis in the outback. Allow 3–4 hours for the full walk.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Darwin &amp; Kakadu National Park</h4>
+      <p>Darwin is a tropical frontier city with outstanding Asian-inspired food (the Mindil Beach Sunset Market is unmissable). Kakadu is Australia's largest national park — ancient Aboriginal rock art, dramatic waterfalls, and vast wetlands teeming with wildlife including saltwater crocodiles.</p>
+      <div class="warning-box"><strong>Note:</strong> February is wet season in the Top End. Expect heat, humidity, and spectacular afternoon thunderstorms. Some roads and areas may be closed due to flooding. Check conditions before travelling, but the waterfalls are at their most powerful and the landscape is lush and green.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEW ZEALAND -->
+<section class="section" id="nz">
+  <div class="container">
+    <div class="state-banner">
+      <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Milford Sound" onerror="this.onerror=null;this.src='';this.parentElement.innerHTML='<div class=\'img-placeholder\'>New Zealand</div>'">
+      <div class="banner-overlay"><h2>New Zealand</h2></div>
+    </div>
+    
+    <p>For those keen to "cross the ditch" — New Zealand is just a 3-hour flight from Sydney and offers some of the most dramatic scenery on the planet. It's an entirely different landscape: snow-capped mountains, fiords, geothermal wonders, and rolling green hills.</p>
+    
+    <h3>North Island</h3>
+    <div class="exp-item">
+      <h4>Auckland &amp; Waiheke Island</h4>
+      <p>Auckland is New Zealand's largest city, set between two harbours. Take the ferry to Waiheke Island — a Mediterranean-feeling wine island with outstanding vineyards, olive groves, and beautiful beaches. Mudbrick and Cable Bay are standout wineries.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Hobbiton &amp; Rotorua</h4>
+      <p>The original Hobbiton movie set is preserved in the rolling green hills near Matamata — a must for any Lord of the Rings fan. Nearby Rotorua is the centre of Māori culture and geothermal activity: bubbling mud pools, geysers, and traditional hāngī feasts.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Tongariro Alpine Crossing</h4>
+      <p>One of the world's great day walks — 19.4km across volcanic terrain past the emerald-coloured Emerald Lakes, through ancient lava flows, and along the rim of active craters. It's challenging but extraordinary. Allow 6–8 hours and check weather conditions carefully.</p>
+    </div>
+    
+    <h3 class="mt-2">South Island</h3>
+    <div class="exp-item">
+      <h4>Queenstown</h4>
+      <p>The adventure capital of the world, set on Lake Wakatipu with the Remarkables mountain range as a backdrop. Bungee jumping, skydiving, jet boating, and some of the best scenery you'll ever see. The food and wine scene is excellent too — the Gibbston Valley wineries are minutes away.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Milford Sound</h4>
+      <p>A fiord of almost impossible beauty — towering cliffs rise vertically from black water, waterfalls cascade from above, and seals bask on the rocks. Take a boat cruise (essential) and, if you can, a scenic flight. The drive from Queenstown through the Homer Tunnel is an adventure in itself.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Wanaka &amp; Roy's Peak</h4>
+      <p>A quieter, more laid-back alternative to Queenstown on beautiful Lake Wanaka. The hike to Roy's Peak (1,578m) is one of the most rewarding in New Zealand — switchbacks up to a summit with 360-degree views of mountains and lakes. Allow 5–6 hours return.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Mount Cook &amp; Hooker Valley</h4>
+      <p>New Zealand's highest peak. The Hooker Valley Track is a 10km return walk through alpine scenery to a glacial lake at the foot of Mount Cook — swing bridges, icebergs, and raw mountain grandeur. One of the easiest and most rewarding walks in the country.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Kaikoura — Whale Watching</h4>
+      <p>A coastal town on the South Island's east coast famous for year-round whale watching (giant sperm whales), swimming with dolphins, and crayfish so fresh it's unreal. The Kaikoura Peninsula Walkway offers dramatic mountain-meets-sea views.</p>
+    </div>
+    
+    <h3 class="mt-2">NZ Food Highlights</h3>
+    <p>New Zealand's food scene punches well above its weight. Look out for: green-lipped mussels (a NZ specialty), lamb (some of the world's best), hāngī (traditional Māori feast cooked in an earth oven), pavlova (they'll argue it's theirs, not Australia's), L&amp;P lemonade (the national soft drink), and the outstanding Pinot Noir from Central Otago.</p>
+  </div>
+</section>
+
+
+<!-- EXOTIC AUSTRALIAN FOOD -->
+<section class="section section-alt" id="exotic-food">
+  <div class="container">
+    <h2 class="text-center">Exotic Australian Food</h2>
+    <div class="divider"></div>
+    <p class="welcome-text">Australia has a uniquely multicultural food scene. Here's one standout restaurant in each major city that showcases something you won't find anywhere else.</p>
+    
+    <div class="card-grid">
+      <div class="card"><div class="card-body">
+        <h4>Sydney — Nour</h4>
+        <p>Modern Middle Eastern fine dining in Surry Hills. Chef Nelly Robinson creates extraordinary dishes using native Australian ingredients through a Lebanese lens. The wood-fired bread and mezze are exceptional.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Melbourne — Charcoal Lane</h4>
+        <p>A social enterprise restaurant serving native Australian cuisine — kangaroo, emu, wattleseed, and bush tomato — prepared with contemporary flair. A meaningful and delicious dining experience.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Cairns — Ochre</h4>
+        <p>Pioneer of Australian native cuisine. Try crocodile, barramundi, and dishes featuring bush herbs and spices you've never encountered. The tasting plate is a great introduction.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Adelaide — Africola</h4>
+        <p>Bold, smoky African-inspired food with South Australian produce. Chef Duncan Welgemoed brings the flavours of his South African heritage to one of Adelaide's most exciting restaurants.</p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <h4>Perth — Wildflower</h4>
+        <p>A rooftop restaurant at COMO The Treasury showcasing the six Noongar seasons through West Australian ingredients. The tasting menu is a journey through the landscape. Stunning views over Perth.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PACKING & TIPS -->
+<section class="section" id="packing">
+  <div class="container">
+    <h2 class="text-center">Packing &amp; Tips</h2>
+    <div class="divider"></div>
+    
+    <div class="essentials-grid">
+      <div class="essential-card">
+        <div class="essential-icon">☀️</div>
+        <h4>Sun Protection</h4>
+        <p>This is not optional. Australian UV levels are extreme, even on cloudy days. Pack SPF 50+ sunscreen (reef-safe if snorkelling), a wide-brim hat, quality sunglasses, and a rash vest for water activities. Reapply sunscreen every 2 hours.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">💧</div>
+        <h4>Hydration</h4>
+        <p>Always carry water, especially in summer. Dehydration sneaks up on you here. Bring a reusable water bottle — tap water is safe and excellent throughout Australia. In the outback, carry more than you think you'll need.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🏥</div>
+        <h4>Travel Insurance</h4>
+        <p>Get comprehensive travel insurance that covers medical expenses (Australian healthcare is expensive for visitors) and adventure activities like skydiving, jet skiing, and hiking. Check the fine print for specific activity exclusions.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">💳</div>
+        <h4>Bank &amp; Cards</h4>
+        <p>Notify your bank and credit card provider about your travel to Australia before you leave. Cards are accepted almost everywhere — you rarely need cash. Consider a travel card with no foreign transaction fees.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🔋</div>
+        <h4>Powerbank</h4>
+        <p>Bring a portable charger (20,000mAh recommended). Long days exploring, using maps, and taking photos will drain your phone quickly. Essential for day trips and remote areas.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🚗</div>
+        <h4>Driving Licence</h4>
+        <p>Bring your driving licence plus an International Driving Permit (IDP). In Germany, get it from ADAC before you travel. Remember: Australians drive on the LEFT side of the road. Take extra care at roundabouts and intersections.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🚤</div>
+        <h4>Boat Licence</h4>
+        <p>If you have a boat licence (Sportbootführerschein), bring it — Fabian might take you out on the Sea-Doos. Some states require a licence for personal watercraft.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">🔌</div>
+        <h4>Power Adapter</h4>
+        <p>Australia uses Type I plugs (three-pin). Bring a universal adapter or buy a Type I adapter at the airport. Most hotels have USB charging ports but don't rely on it.</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">📱</div>
+        <h4>Useful Apps</h4>
+        <p>TripView (Sydney public transport, real-time), Google Maps (download offline maps for road trips and remote areas), Uber/DiDi (rideshare), Opal Travel (top up your transit card).</p>
+      </div>
+      <div class="essential-card">
+        <div class="essential-icon">📷</div>
+        <h4>Waterproof Phone Case</h4>
+        <p>Essential for beach days, snorkelling, kayaking, and jet skiing. A good waterproof phone pouch costs under $20 and will save you from a very expensive accident. Bring one.</p>
+      </div>
+    </div>
+    
+    <h3 class="mt-2">Getting Around</h3>
+    <div class="tip-box">
+      <strong>Flights:</strong> Qantas, Virgin Australia, and Jetstar connect all major cities. Book early for the best fares — Jetstar is the budget option. Sydney to Melbourne is about 1.5 hours, Sydney to Cairns is about 3 hours.<br><br>
+      <strong>Driving:</strong> Drive on the LEFT. Car hire is widely available. An International Driving Permit is recommended alongside your home licence. Distances are vast — Sydney to Melbourne is about 9 hours by road.<br><br>
+      <strong>Sydney transit:</strong> Get an Opal card (or use a contactless credit card) for trains, buses, ferries, and light rail. The ferry system is one of the best ways to see the city. Uber and DiDi are widely available.
+    </div>
+  </div>
+</section>
+
+
+<!-- INSPIRATION GALLERY -->
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <h2 class="text-center">Inspiration Gallery</h2>
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <a href="#sydney" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1878293/pexels-photo-1878293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sydney Opera House" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Sydney Opera House</div>'">
+        <div class="gallery-caption">Sydney Opera House</div>
+      </a>
+      <a href="#sydney" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bondi Beach" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Bondi Beach</div>'">
+        <div class="gallery-caption">Bondi Beach</div>
+      </a>
+      <a href="#sydney" class="gallery-item">
+        <img src="https://images.pexels.com/photos/995764/pexels-photo-995764.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Harbour Bridge" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Harbour Bridge</div>'">
+        <div class="gallery-caption">Harbour Bridge</div>
+      </a>
+      <a href="#sydney" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2070033/pexels-photo-2070033.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Blue Mountains" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Blue Mountains</div>'">
+        <div class="gallery-caption">Blue Mountains</div>
+      </a>
+      <a href="#sydney" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1619854/pexels-photo-1619854.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Manly Beach" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Manly Beach</div>'">
+        <div class="gallery-caption">Manly Beach</div>
+      </a>
+      <a href="#victoria" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Twelve Apostles" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Twelve Apostles</div>'">
+        <div class="gallery-caption">Twelve Apostles</div>
+      </a>
+      <a href="#victoria" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Melbourne Laneways" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Melbourne Laneways</div>'">
+        <div class="gallery-caption">Melbourne Laneways</div>
+      </a>
+      <a href="#queensland" class="gallery-item">
+        <img src="https://images.pexels.com/photos/3369102/pexels-photo-3369102.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Great Barrier Reef" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Great Barrier Reef</div>'">
+        <div class="gallery-caption">Great Barrier Reef</div>
+      </a>
+      <a href="#queensland" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Daintree Rainforest" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Daintree Rainforest</div>'">
+        <div class="gallery-caption">Daintree Rainforest</div>
+      </a>
+      <a href="#queensland" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1033729/pexels-photo-1033729.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Whitehaven Beach" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Whitehaven Beach</div>'">
+        <div class="gallery-caption">Whitehaven Beach</div>
+      </a>
+      <a href="#south-australia" class="gallery-item">
+        <img src="https://images.pexels.com/photos/442116/pexels-photo-442116.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barossa Valley" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Barossa Valley</div>'">
+        <div class="gallery-caption">Barossa Valley</div>
+      </a>
+      <a href="#south-australia" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1057549/pexels-photo-1057549.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kangaroo Island" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Kangaroo Island</div>'">
+        <div class="gallery-caption">Kangaroo Island</div>
+      </a>
+      <a href="#western-australia" class="gallery-item">
+        <img src="https://images.pexels.com/photos/4737484/pexels-photo-4737484.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rottnest Island" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Rottnest Island</div>'">
+        <div class="gallery-caption">Rottnest Island</div>
+      </a>
+      <a href="#western-australia" class="gallery-item">
+        <img src="https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perth" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Perth</div>'">
+        <div class="gallery-caption">Perth</div>
+      </a>
+      <a href="#tasmania" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cradle Mountain" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Cradle Mountain</div>'">
+        <div class="gallery-caption">Cradle Mountain</div>
+      </a>
+      <a href="#northern-territory" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2869215/pexels-photo-2869215.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Uluru" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Uluru</div>'">
+        <div class="gallery-caption">Uluru</div>
+      </a>
+      <a href="#northern-territory" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2387871/pexels-photo-2387871.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kakadu" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Kakadu</div>'">
+        <div class="gallery-caption">Kakadu</div>
+      </a>
+      <a href="#nz" class="gallery-item">
+        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Milford Sound" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Milford Sound</div>'">
+        <div class="gallery-caption">Milford Sound</div>
+      </a>
+      <a href="#nz" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2397414/pexels-photo-2397414.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Queenstown" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Queenstown</div>'">
+        <div class="gallery-caption">Queenstown</div>
+      </a>
+      <a href="#nz" class="gallery-item">
+        <img src="https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hobbiton" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-placeholder\'>Hobbiton</div>'">
+        <div class="gallery-caption">Hobbiton</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AUSSIE DICTIONARY -->
+<section class="section" id="slang">
+  <div class="container">
+    <h2 class="text-center">Aussie Dictionary</h2>
+    <div class="divider"></div>
+    <div class="slang-grid">
+      <div class="slang-header">Aussie Slang</div>
+      <div class="slang-header">British English</div>
+      <div class="slang-header">Deutsch</div>
+      <div class="slang-cell"><strong>G'day</strong></div>
+      <div class="slang-cell">Hello</div>
+      <div class="slang-cell">Hallo</div>
+      <div class="slang-cell"><strong>Arvo</strong></div>
+      <div class="slang-cell">Afternoon</div>
+      <div class="slang-cell">Nachmittag</div>
+      <div class="slang-cell"><strong>Brekky</strong></div>
+      <div class="slang-cell">Breakfast</div>
+      <div class="slang-cell">Frühstück</div>
+      <div class="slang-cell"><strong>Barbie</strong></div>
+      <div class="slang-cell">Barbecue</div>
+      <div class="slang-cell">Grillen</div>
+      <div class="slang-cell"><strong>Maccas</strong></div>
+      <div class="slang-cell">McDonald's</div>
+      <div class="slang-cell">McDonald's</div>
+      <div class="slang-cell"><strong>Servo</strong></div>
+      <div class="slang-cell">Petrol station</div>
+      <div class="slang-cell">Tankstelle</div>
+      <div class="slang-cell"><strong>Thongs</strong></div>
+      <div class="slang-cell">Flip-flops</div>
+      <div class="slang-cell">Flip-Flops</div>
+      <div class="slang-cell"><strong>Bottle-o</strong></div>
+      <div class="slang-cell">Liquor store</div>
+      <div class="slang-cell">Getränkeladen</div>
+      <div class="slang-cell"><strong>Sunnies</strong></div>
+      <div class="slang-cell">Sunglasses</div>
+      <div class="slang-cell">Sonnenbrille</div>
+      <div class="slang-cell"><strong>Ute</strong></div>
+      <div class="slang-cell">Pickup truck</div>
+      <div class="slang-cell">Pick-up</div>
+      <div class="slang-cell"><strong>Esky</strong></div>
+      <div class="slang-cell">Cooler box</div>
+      <div class="slang-cell">Kühlbox</div>
+      <div class="slang-cell"><strong>Chunder</strong></div>
+      <div class="slang-cell">Vomit</div>
+      <div class="slang-cell">Sich übergeben</div>
+      <div class="slang-cell"><strong>Mate</strong></div>
+      <div class="slang-cell">Friend / buddy</div>
+      <div class="slang-cell">Kumpel</div>
+      <div class="slang-cell"><strong>No worries</strong></div>
+      <div class="slang-cell">No problem</div>
+      <div class="slang-cell">Kein Problem</div>
+      <div class="slang-cell"><strong>Reckon</strong></div>
+      <div class="slang-cell">Think / believe</div>
+      <div class="slang-cell">Denken / glauben</div>
+      <div class="slang-cell"><strong>Bogan</strong></div>
+      <div class="slang-cell">Uncultured person</div>
+      <div class="slang-cell">Proll</div>
+      <div class="slang-cell"><strong>She'll be right</strong></div>
+      <div class="slang-cell">It will be fine</div>
+      <div class="slang-cell">Wird schon</div>
+      <div class="slang-cell"><strong>Chucking a sickie</strong></div>
+      <div class="slang-cell">Calling in sick (when not sick)</div>
+      <div class="slang-cell">Blaumachen</div>
+      <div class="slang-cell"><strong>Flat white</strong></div>
+      <div class="slang-cell">Espresso with microfoam</div>
+      <div class="slang-cell">Kaffee mit Milchschaum</div>
+      <div class="slang-cell"><strong>Drop bear</strong></div>
+      <div class="slang-cell">Fictional deadly koala</div>
+      <div class="slang-cell">Fiktiver Killer-Koala</div>
+      <div class="slang-cell"><strong>Snag</strong></div>
+      <div class="slang-cell">Sausage</div>
+      <div class="slang-cell">Würstchen</div>
+      <div class="slang-cell"><strong>Stubby</strong></div>
+      <div class="slang-cell">Small beer bottle</div>
+      <div class="slang-cell">Kleine Bierflasche</div>
+      <div class="slang-cell"><strong>Mozzie</strong></div>
+      <div class="slang-cell">Mosquito</div>
+      <div class="slang-cell">Mücke</div>
+      <div class="slang-cell"><strong>Tradie</strong></div>
+      <div class="slang-cell">Tradesperson</div>
+      <div class="slang-cell">Handwerker</div>
+      <div class="slang-cell"><strong>Avo</strong></div>
+      <div class="slang-cell">Avocado</div>
+      <div class="slang-cell">Avocado</div>
+      <div class="slang-cell"><strong>Bathers / Togs</strong></div>
+      <div class="slang-cell">Swimsuit</div>
+      <div class="slang-cell">Badehose / Badeanzug</div>
+      <div class="slang-cell"><strong>Heaps</strong></div>
+      <div class="slang-cell">A lot / very</div>
+      <div class="slang-cell">Sehr viel</div>
+      <div class="slang-cell"><strong>Keen</strong></div>
+      <div class="slang-cell">Enthusiastic / interested</div>
+      <div class="slang-cell">Begeistert</div>
+      <div class="slang-cell"><strong>Cross the ditch</strong></div>
+      <div class="slang-cell">Go to New Zealand</div>
+      <div class="slang-cell">Nach Neuseeland reisen</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <svg viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg" class="footer-logo">
+    <ellipse cx="30" cy="35" rx="25" ry="30" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="17" y="45" font-family="Cormorant Garamond, serif" font-size="30" font-weight="300" font-style="italic" fill="rgba(255,255,255,0.8)">V</text>
+    <text x="32" y="47" font-family="Cormorant Garamond, serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.8)">F</text>
+  </svg>
+  <h3>Vicky &amp; Fabian</h3>
+  <p class="footer-date">Sydney &bull; 27 February 2027</p>
+  <p class="footer-love">Made with love for our favourite people</p>
+</footer>
+
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+// Back to top button
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+
+// Nav background on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.style.background = window.scrollY > 50 ? 'rgba(250,250,248,0.97)' : 'rgba(250,250,248,0.92)';
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
+
+// Image error handler for Pexels images
+document.querySelectorAll('img[src*="pexels"]').forEach(img => {
+  if (!img.onerror) {
+    img.onerror = function() {
+      this.onerror = null;
+      const placeholder = document.createElement('div');
+      placeholder.className = 'img-placeholder';
+      placeholder.textContent = this.alt || 'Image';
+      placeholder.style.height = this.height ? this.height + 'px' : '200px';
+      this.parentElement.replaceChild(placeholder, this);
+    };
+  }
+});
+
+// Scroll offset for fixed nav
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 70;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
